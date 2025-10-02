@@ -1,7 +1,9 @@
 # Juego de Triqui Traqui con React y Next.js  ❌⭕ 
 
-## Presentado por:
+### Presentado por:
 #### 1152358-Israel Bulla Rey
+
+---
 
 Este proyecto es un sencillo juego de **Tres en Raya** construido con **React** y **Next.js**, aplicando estilos con **TailwindCSS**.  
 
