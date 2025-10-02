@@ -29,7 +29,7 @@ function Board({ xIsNext, squares, onPlay }) {
     let status;
     if (winner) {
         status = '✨Ganador✨: ' + winner;
-    } else if (!squares.includes(null)) {
+    } else if (!winner && !squares.includes(null)) {
         status = '🥀Empate🥀';
     } else {
         status = 'Siguiente jugador: ' + (xIsNext ? '✖️' : '⭕');
