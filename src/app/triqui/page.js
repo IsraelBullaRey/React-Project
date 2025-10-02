@@ -37,8 +37,8 @@ function Board({ xIsNext, squares, onPlay }) {
 
     return (
         <>
-        <div class="bg-indigo-400 rounded-lg m-5 p-5 flex justify-center text-center text-2xl font-bold flex-auto">{status}</div>
-        <div class="bg-indigo-50 rounded-lg m-10 mx-40 p-20">
+        <div class="bg-indigo-400 rounded-lg m-5 p-5 flex justify-center text-center text-xl sm:text-2xl font-bold flex-auto">{status}</div>
+        <div class="bg-indigo-50 rounded-lg m-2 py-5 p-2 sm:m-10 sm:mx-20 sm:p-20">
             <div class="flex text-center justify-center flex-auto">
                 <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
                 <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
@@ -85,18 +85,20 @@ export default function Game() {
         }
         return (
         <li key={move}>
-            <button class="m-3 bg-indigo-500 rounded-lg w-60 h-10 hover:bg-indigo-700 hover:shadow-lg" onClick={() => jumpTo(move)}>{description}</button>
+            <button class="m-3 bg-indigo-500 rounded-lg w-40 m:w-60 h-10 hover:bg-indigo-700 hover:shadow-lg" onClick={() => jumpTo(move)}>{description}</button>
         </li>
         );
     });
 
     return (
         <div class="bg-[url('https://i.pinimg.com/1200x/82/93/50/8293509819e69907fc8eb32555d1352f.jpg')] bg-cover bg-center h-screen">
-        <div class="bg-indigo-200 rounded-lg m-10 p-2 mx-20">
+        <div class="bg-indigo-200 rounded-lg m-5 sm:m-10 p-2 sm:mx-20">
             <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
         </div>
-        <div class="bg-indigo-300 rounded-lg m-10 p-2 mx-100 flex justify-center text-center flex flex-auto">
-            <ol class="bg-indigo-200 rounded-lg m-5 w-100 flex flex-wrap justify-center flex-auto">{moves}</ol>
+        <div class="flex justify-center">
+            <div class="bg-indigo-300 rounded-lg p-1 m-3 mx-10 sm:m-10 sm:p-2 sm:mx-100 flex justify-center text-center flex flex-auto">
+                <ol class="bg-indigo-200 rounded-lg m-2 w-20 sm:m-5 sm:w-100 flex flex-wrap justify-center flex-auto">{moves}</ol>
+            </div>
         </div>
         </div>
     );
