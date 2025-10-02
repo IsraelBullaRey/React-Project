@@ -5,7 +5,7 @@ import './globals.css';
 
 function Square({ value, onSquareClick }) {
     return (
-        <button class="border-4 border-indigo-400 bg-indigo-600 h-20 w-20 text-center" onClick={onSquareClick}>
+        <button className="border-4 border-indigo-400 bg-indigo-600 h-20 w-20 text-center" onClick={onSquareClick}>
             {value}
         </button>
     );
@@ -37,19 +37,19 @@ function Board({ xIsNext, squares, onPlay }) {
 
     return (
         <>
-        <div class="bg-indigo-400 rounded-lg m-5 p-5 flex justify-center text-center text-xl sm:text-2xl font-bold flex-auto">{status}</div>
-        <div class="bg-indigo-50 rounded-lg m-2 py-5 p-2 sm:m-10 sm:mx-20 sm:p-20">
-            <div class="flex text-center justify-center flex-auto">
+        <div className="bg-indigo-400 rounded-lg m-5 p-5 flex justify-center text-center text-xl sm:text-2xl font-bold flex-auto">{status}</div>
+        <div className="bg-indigo-50 rounded-lg m-2 py-5 p-2 sm:m-10 sm:mx-20 sm:p-20">
+            <div className="flex text-center justify-center flex-auto">
                 <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
                 <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
                 <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
             </div>
-            <div class="flex text-center justify-center flex-auto">
+            <div className="flex text-center justify-center flex-auto">
                 <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
                 <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
                 <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
             </div>
-            <div class="flex text-center justify-center flex-auto">
+            <div className="flex text-center justify-center flex-auto">
                 <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
                 <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
                 <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
@@ -85,19 +85,19 @@ export default function Game() {
         }
         return (
         <li key={move}>
-            <button class="m-3 bg-indigo-500 rounded-lg w-40 m:w-60 h-10 hover:bg-indigo-700 hover:shadow-lg" onClick={() => jumpTo(move)}>{description}</button>
+            <button className="m-3 bg-indigo-500 rounded-lg w-40 m:w-60 h-10 hover:bg-indigo-700 hover:shadow-lg" onClick={() => jumpTo(move)}>{description}</button>
         </li>
         );
     });
 
     return (
-        <div class="bg-[url('https://i.pinimg.com/1200x/82/93/50/8293509819e69907fc8eb32555d1352f.jpg')] bg-cover bg-center h-screen">
-        <div class="bg-indigo-200 rounded-lg m-5 sm:m-10 p-2 sm:mx-20">
+        <div className="bg-[url('https://i.pinimg.com/1200x/82/93/50/8293509819e69907fc8eb32555d1352f.jpg')] bg-cover bg-center h-screen">
+        <div className="bg-indigo-200 rounded-lg m-5 sm:m-10 p-2 sm:mx-20">
             <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
         </div>
-        <div class="flex justify-center">
-            <div class="bg-indigo-300 rounded-lg p-1 m-3 mx-10 sm:m-10 sm:p-2 sm:mx-100 flex justify-center text-center flex flex-auto">
-                <ol class="bg-indigo-200 rounded-lg m-2 w-20 sm:m-5 sm:w-100 flex flex-wrap justify-center flex-auto">{moves}</ol>
+        <div className="flex justify-center">
+            <div className="bg-indigo-300 rounded-lg p-1 m-3 mx-10 sm:m-10 sm:p-2 sm:mx-100 flex justify-center text-center flex flex-auto">
+                <ol className="bg-indigo-200 rounded-lg m-2 w-20 sm:m-5 sm:w-100 flex flex-wrap justify-center flex-auto">{moves}</ol>
             </div>
         </div>
         </div>
