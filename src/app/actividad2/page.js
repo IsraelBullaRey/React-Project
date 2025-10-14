@@ -23,6 +23,7 @@ export default function Home() {
     }
   };
 
+  //Reto 3 y 4, tachar y eliminar
   const handleTaskClick = (index) => {
     if (tasks[index].completed) {
       // Si ya está tachada, eliminarla
@@ -35,6 +36,7 @@ export default function Home() {
     }
   };
 
+  //Reto 5: Ordenar
   const sortTasks = () => {
     const sorted = [...tasks].sort((a, b) => {
       return isAscending 
