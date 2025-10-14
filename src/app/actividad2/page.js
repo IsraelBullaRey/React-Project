@@ -7,12 +7,18 @@ export default function Home() {
   const [currentTask, setCurrentTask] = useState("");
 
   const addButtonHandler = () => {
-    setTasks([...tasks, currentTask]);
-    setCurrentTask("");
+    if (currentTask === "") {
+      alert("No puede agregar tareas vacías🥀🥀🥀")
+    } else if (tasks.filter(tarea => tarea === currentTask).length == 0) {
+      alert("No puede agregar tareas repetidas💀💀💀")
+    } else {
+      setTasks([...tasks, currentTask]);
+      setCurrentTask("");
+    }
   };
 
-  // Reto 1: Hacer que no se pueda agregar una tarea vacía 
-  // Reto 2: Hacer que no se pueda agregar una tarea repetida
+  // Reto 1: Hacer que no se pueda agregar una tarea vacía /
+  // Reto 2: Hacer que no se pueda agregar una tarea repetida 
   // Reto 3: Hacer que al dar click en una tarea, aparezca tachada (clase tailwind "line-through")
   // Reto 4: Hacer que al dar click en una tarea tachada, desaparezca la tarea
   // Reto 5: Poner un botón que organice las tareas alfabéticamente
@@ -37,8 +43,8 @@ export default function Home() {
           Agregar
         </button>
         {/* <button className="bg-red-500 text-white rounded-lg px-4 py-2">
-          Ordenar
-        </button> */}
+    Ordenar
+  </button> */}
       </div>
       <div className="flex flex-col gap-2">
         {tasks.map((task, index) => (
