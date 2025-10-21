@@ -15,12 +15,14 @@ export default function Character({ url }) {
     }, [url]);
 
     return (<div>{loading ? 
-        <div>⏳</div> 
-        : <div>
-            <div className="text-xl"> 
+        <div className="text-center text-2xl">⏳</div> 
+        : <div className="bg-indigo-300 flex flex-auto flex-col rounded-full mx-10 my-2 p-5">
+            <div className="text-2xl text-center font-bold text-white"> 
                 {data.name}
             </div>
-            <img className="h-36 w-36" src={"https://cdn.thesimpsonsapi.com/500" + data.portrait_path} alt="" />
+            <div className="flex justify-center">
+                <img className="h-40 w-40 bg-indigo-100 rounded-full" src={"https://cdn.thesimpsonsapi.com/500" + data.portrait_path} alt="" />
+            </div>
         </div>}
         </div>
     )

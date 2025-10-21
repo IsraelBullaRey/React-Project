@@ -22,22 +22,31 @@ export default function SimpsonsPage() {
     }
 
     return (
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 justify-center bg-indigo-100 h-screen">
+        <div className="bg-indigo-300 text-3xl font-bold text-center mt-7 text-white">
+            Simpsons API
+        </div>
+        <div className="text-center">
+            Ingresa el número correspondiente al personaje que deseas buscar o usa las flechas para moverte.
+        </div>
         <input
             type="number"
             min="1"
             max="10"
-            className="border text-xl"
+            className="border text-xl bg-white mt-2 mx-10 rounded-lg"
             onChange={(e) => {
             setIndex(e === "" ? 1 : parseInt(e.target.value, 10));
             }}
         />
-        <button onClick={atras}>
-            ⬅️ Atrás
-        </button>
-        <button onClick={adelante}>
-            Adelante ➡️
-        </button>
+        <div className="flex flex-col items-center justify-center">
+            <button className="m-2 py-5 bg-indigo-300 rounded-lg hover:bg-indigo-400 hover:shadow-lg text-lg font-bold text-white w-40" onClick={atras}>
+                ⬅️ Atrás
+            </button>
+            <button className="m-2 py-5 bg-indigo-300 rounded-lg hover:bg-indigo-400 hover:shadow-lg text-lg font-bold text-white w-40" onClick={adelante}>
+                Adelante ➡️
+            </button>
+        </div>
+        
         <hr />
         <Character url={`${API_BASE_URL}/characters/${index}`}></Character>
         </div>
